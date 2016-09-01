@@ -49,7 +49,7 @@ def admin_logout(request):
 
 
 
-# Society Edit Page..........
+# Society Edit Page
 def society_details(request):
 	if not request.user.is_authenticated():
 		return HttpResponseRedirect(reverse_lazy('admin_login'))
@@ -59,7 +59,7 @@ def society_details(request):
 		form = SocietyForm(request.POST, instance=society)
 		print "Reached before checking validity!"
 		if form.is_valid():
-			form.save()
+			form.save(force_update=True)
 			print "Form Saved!!!!!"
 		return HttpResponseRedirect(reverse_lazy('admin_page'))
 	else:
