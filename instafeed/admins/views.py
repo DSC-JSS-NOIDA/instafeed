@@ -51,5 +51,17 @@ def admin_logout(request):
 
 # Society Edit Page
 def society_details(request):
-	form = SocietyForm()
+	if not request.user.is_authenticated():
+		return HttpResponseRedirect(reverse_lazy('admin_login'))
+	if request.method == 'POST':
+		user = User.objects.get(id=request.user.id)
+		society = Society.objects.get(society_user=user)
+		form = SocietyForm(request.POST, instance=society)
+		print "Reached before checking validity!"
+		if form.is_valid():
+			form.save()
+			print "Form Saved!!!!!"
+		return HttpResponseRedirect(reverse_lazy('admin_page'))
+	else:
+		form = SocietyForm() 
 	return render(request, 'society_details.html', {'form': form})

@@ -9,7 +9,9 @@
 	<a href="{% url 'admin_logout' %}">Logout</a>
 	<br>
 	<h3>Details:</h3>
-	<p>{{society_details}}</p>
+	<p>Name: {{ society_details.society_name }}</p>
+	<p>Description: {{ society_details.society_description }}</p>
+	<p>Category: {{ society_details.society_category }}</p>
 	<br>
 	<a href="{% url 'society_details' %}">Edit</a>
 </body>

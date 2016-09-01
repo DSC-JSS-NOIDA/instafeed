@@ -10,4 +10,4 @@ class Login(forms.Form):
 class SocietyForm(ModelForm):
 	class Meta:
 		model = Society
-		fields = ['society_name', 'society_description', 'society_category']
+		exclude = ['society_user']
