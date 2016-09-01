@@ -49,7 +49,7 @@ def admin_logout(request):
 
 
 
-# Society Edit Page
+# Society Edit Page..........
 def society_details(request):
 	if not request.user.is_authenticated():
 		return HttpResponseRedirect(reverse_lazy('admin_login'))
