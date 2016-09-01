@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>InstaFeed - Admin</title>
+</head>
+<body>
+	<h1>Admin Page</h1>
+	<a href="{% url 'admin_logout' %}">Logout</a>
+	<br>
+	<h3>Details:</h3>
+	<p>{{society_details}}</p>
+	<br>
+	<a href="{% url 'society_details' %}">Edit</a>
+</body>
+</html>

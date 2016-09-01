@@ -16,6 +16,7 @@ class Category(models.Model):
 
 
 
+@python_2_unicode_compatible
 class Society(models.Model):
 	society_name = models.CharField(max_length=80)
 	society_description = models.TextField()
@@ -28,6 +29,7 @@ class Society(models.Model):
 
 
 
+@python_2_unicode_compatible
 class Notice(models.Model):
 	event_name = models.CharField(max_length=100)
 	event_description = models.TextField()
